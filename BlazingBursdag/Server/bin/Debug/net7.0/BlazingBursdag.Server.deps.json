@@ -494,7 +494,9 @@
       "BlazingBursdag.Client/1.0.0": {
         "dependencies": {
           "BlazingBursdag.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components": "7.0.5",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.5",
+          "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "7.0.5",
           "Microsoft.Authentication.WebAssembly.Msal": "7.0.5",
           "Microsoft.Extensions.Http": "7.0.0"
         },

@@ -1,20 +1,24 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Identity.Web;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var configuration = builder.Configuration.GetSection("AzureAdB2C");
 // Add services to the container.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAdB2C"));
-builder.Services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
+    .AddMicrosoftIdentityWebApi(configuration);
+
+builder.Services.AddCors(options =>
 {
-    // other options...
-    options.Authority = builder.Configuration["AzureAdB2C:Instance"] + builder.Configuration["AzureAdB2C:Domain"] + "/v2.0";
-    options.Audience = builder.Configuration["AzureAdB2C:ClientId"];
-    options.TokenValidationParameters.ValidAudiences = new [] { options.Audience };  // if necessary
-    options.RequireHttpsMetadata = false;  // Disable HTTPS requirement for development
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("https://localhost:7060") // Replace with your client-side URL
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -36,12 +40,11 @@ else
 
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
-
+app.UseCors();
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 app.MapRazorPages();
 app.MapControllers();

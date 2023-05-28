@@ -205,14 +205,14 @@
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
       "BlazingBursdag.Shared.dll": "sha256-8vNUnxDRHescb+5DNtGhswLUprwB5\/P9vFUaom3MEg0=",
-      "BlazingBursdag.Client.dll": "sha256-tH7DnucCJms24GB9TgzrHKcj41HteDSC4VRupAVjY4Y="
+      "BlazingBursdag.Client.dll": "sha256-19E2xl1k4IAtw10ir5JFEzkGhqw+cOOpiGp8l2fg1LQ="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BlazingBursdag.Shared.pdb": "sha256-oQa9weYMPUdOGfg\/r9gKUiiBVNbV8\/tmxV67aRfiT8g=",
-      "BlazingBursdag.Client.pdb": "sha256-K5xlX0xlfvpnJn3x8NFPQ1sMkjeaAeOPkuMZPWvJk3Q="
+      "BlazingBursdag.Client.pdb": "sha256-IXxitgQ5MyM1XZBRS\/CFjzZZaKkyNsWX8xI1pa0kIQk="
     },
     "runtime": {
       "dotnet.7.0.5.ymj0f9c7jt.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
